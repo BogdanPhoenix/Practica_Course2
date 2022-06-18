@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Practice
@@ -21,6 +22,11 @@ namespace Practice
                 case '0': e.Handled = text.Text.Count(c => c == '0') > 0 && text.Text.Count(c => (c == ',')) < 1; break;
                 default: e.Handled = (text.Text.Length == 1 && text.Text[0] == '0') || !char.IsDigit(e.KeyChar); break;
             }
+        }
+
+        public static void OnlyDigit(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = ((e.KeyChar == '0' && ((TextBox)sender).Text.Length == 0) || !char.IsDigit(e.KeyChar)) && e.KeyChar != charBack;
         }
     }
 }

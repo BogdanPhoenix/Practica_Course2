@@ -118,61 +118,103 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="open_arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open_arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimise_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimise_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="question_mark_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\question_mark_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Close_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="function31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="duplication_warning_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\duplication_warning_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="full_screen_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\full_screen_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_as_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save_as_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="4_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\4_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hamburger Menu_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hamburger Menu_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minimise_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimise_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="error_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="function7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upload_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upload_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="info_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_out_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_out_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_more_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_more_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hamburger Menu_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hamburger Menu_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question_mark_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question_mark_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_35px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_35px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="4_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open_arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open_arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="error_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="downloading_updates_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\downloading_updates_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="full_screen_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_screen_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_arrow_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_arrow_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_as_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save_as_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="function4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\function4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_in_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_in_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

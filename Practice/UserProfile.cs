@@ -132,7 +132,7 @@ namespace Practice
         private void TaskThree_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormTaskThree());
+            OpenChildForm(new FormTaskThree(this));
         }
         /// <summary>
         /// Метод для активації пункту меню "Завдання №4"

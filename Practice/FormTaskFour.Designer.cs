@@ -13,6 +13,10 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            if(formSerch != null)
+            {
+                formSerch.Close();
+            }
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -28,34 +32,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTaskFour));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.labelPathFile = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.imageButtonSearch = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.radioButtonMaxIndex = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.radioButtonMaxValue = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageButtonDownload = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.imageButtonCreate = new Bunifu.UI.WinForms.BunifuImageButton();
             this.buttonDuplication = new Bunifu.UI.WinForms.BunifuImageButton();
             this.buttonError = new Bunifu.UI.WinForms.BunifuImageButton();
             this.buttonWarning = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.buttonImport = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.buttonSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.textBoxPathFile = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.buttonCreate = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.buttonResult = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.textBoxMaxNumber = new Bunifu.UI.WinForms.BunifuTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataResults = new System.Windows.Forms.DataGridView();
             this.labelErrorData = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.bunifuToolTip = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.bunifuSnackbar = new Bunifu.UI.WinForms.BunifuSnackbar(this.components);
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).BeginInit();
@@ -63,31 +73,266 @@
             // 
             // labelPathFile
             // 
+            this.labelPathFile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelPathFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPathFile.Location = new System.Drawing.Point(15, 10);
+            this.labelPathFile.Location = new System.Drawing.Point(30, 10);
             this.labelPathFile.Name = "labelPathFile";
-            this.labelPathFile.Size = new System.Drawing.Size(155, 40);
+            this.labelPathFile.Size = new System.Drawing.Size(195, 40);
             this.labelPathFile.TabIndex = 2;
             this.labelPathFile.Text = "Шлях до файла";
             this.labelPathFile.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuToolTip.SetToolTip(this.labelPathFile, "");
+            this.bunifuToolTip.SetToolTipIcon(this.labelPathFile, null);
+            this.bunifuToolTip.SetToolTipTitle(this.labelPathFile, "");
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.imageButtonSearch);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.radioButtonMaxIndex);
+            this.panel2.Controls.Add(this.radioButtonMaxValue);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.imageButtonDownload);
+            this.panel2.Controls.Add(this.imageButtonCreate);
             this.panel2.Controls.Add(this.buttonDuplication);
             this.panel2.Controls.Add(this.buttonError);
             this.panel2.Controls.Add(this.buttonWarning);
-            this.panel2.Controls.Add(this.buttonImport);
-            this.panel2.Controls.Add(this.buttonSearch);
             this.panel2.Controls.Add(this.textBoxPathFile);
-            this.panel2.Controls.Add(this.buttonCreate);
             this.panel2.Controls.Add(this.labelPathFile);
             this.panel2.Controls.Add(this.buttonResult);
             this.panel2.Controls.Add(this.textBoxMaxNumber);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(840, 173);
+            this.panel2.Size = new System.Drawing.Size(885, 205);
             this.panel2.TabIndex = 5;
+            this.bunifuToolTip.SetToolTip(this.panel2, "");
+            this.bunifuToolTip.SetToolTipIcon(this.panel2, null);
+            this.bunifuToolTip.SetToolTipTitle(this.panel2, "");
+            // 
+            // imageButtonSearch
+            // 
+            this.imageButtonSearch.ActiveImage = global::Practice.Properties.Resources.search_more_64px;
+            this.imageButtonSearch.AllowAnimations = true;
+            this.imageButtonSearch.AllowBuffering = false;
+            this.imageButtonSearch.AllowToggling = false;
+            this.imageButtonSearch.AllowZooming = true;
+            this.imageButtonSearch.AllowZoomingOnFocus = false;
+            this.imageButtonSearch.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imageButtonSearch.BackColor = System.Drawing.Color.Transparent;
+            this.imageButtonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButtonSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.imageButtonSearch.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imageButtonSearch.ErrorImage")));
+            this.imageButtonSearch.FadeWhenInactive = false;
+            this.imageButtonSearch.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.imageButtonSearch.Image = global::Practice.Properties.Resources.search_more_64px;
+            this.imageButtonSearch.ImageActive = global::Practice.Properties.Resources.search_more_64px;
+            this.imageButtonSearch.ImageLocation = null;
+            this.imageButtonSearch.ImageMargin = 20;
+            this.imageButtonSearch.ImageSize = new System.Drawing.Size(30, 30);
+            this.imageButtonSearch.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.imageButtonSearch.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageButtonSearch.InitialImage")));
+            this.imageButtonSearch.Location = new System.Drawing.Point(90, 149);
+            this.imageButtonSearch.Name = "imageButtonSearch";
+            this.imageButtonSearch.Rotation = 0;
+            this.imageButtonSearch.ShowActiveImage = true;
+            this.imageButtonSearch.ShowCursorChanges = true;
+            this.imageButtonSearch.ShowImageBorders = true;
+            this.imageButtonSearch.ShowSizeMarkers = false;
+            this.imageButtonSearch.Size = new System.Drawing.Size(50, 50);
+            this.imageButtonSearch.TabIndex = 16;
+            this.bunifuToolTip.SetToolTip(this.imageButtonSearch, "");
+            this.bunifuToolTip.SetToolTipIcon(this.imageButtonSearch, null);
+            this.imageButtonSearch.ToolTipText = "Пошук елемента за індексом";
+            this.bunifuToolTip.SetToolTipTitle(this.imageButtonSearch, "");
+            this.imageButtonSearch.Visible = false;
+            this.imageButtonSearch.WaitOnLoad = false;
+            this.imageButtonSearch.Zoom = 20;
+            this.imageButtonSearch.ZoomSpeed = 10;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(30, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(195, 40);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Варіант побудови";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuToolTip.SetToolTip(this.label4, "");
+            this.bunifuToolTip.SetToolTipIcon(this.label4, null);
+            this.bunifuToolTip.SetToolTipTitle(this.label4, "");
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(262, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(229, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "за максимальним значенням";
+            this.bunifuToolTip.SetToolTip(this.label3, "Виведення ряду Фібоначчі відбувається до вказананого числа користувачем");
+            this.bunifuToolTip.SetToolTipIcon(this.label3, null);
+            this.bunifuToolTip.SetToolTipTitle(this.label3, "");
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(572, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "за номером";
+            this.bunifuToolTip.SetToolTip(this.label2, "Виведення ряду Фібоначчі відбувається  включно до вказаного номеру в ряді");
+            this.bunifuToolTip.SetToolTipIcon(this.label2, null);
+            this.bunifuToolTip.SetToolTipTitle(this.label2, "");
+            // 
+            // radioButtonMaxIndex
+            // 
+            this.radioButtonMaxIndex.AllowBindingControlLocation = false;
+            this.radioButtonMaxIndex.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButtonMaxIndex.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonMaxIndex.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.radioButtonMaxIndex.BorderThickness = 1;
+            this.radioButtonMaxIndex.Checked = false;
+            this.radioButtonMaxIndex.Location = new System.Drawing.Point(545, 70);
+            this.radioButtonMaxIndex.Name = "radioButtonMaxIndex";
+            this.radioButtonMaxIndex.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.radioButtonMaxIndex.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.radioButtonMaxIndex.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.radioButtonMaxIndex.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.radioButtonMaxIndex.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.radioButtonMaxIndex.Size = new System.Drawing.Size(21, 21);
+            this.radioButtonMaxIndex.TabIndex = 12;
+            this.radioButtonMaxIndex.Text = null;
+            this.bunifuToolTip.SetToolTip(this.radioButtonMaxIndex, "Виведення ряду Фібоначчі відбувається  включно до вказаного номеру в ряді");
+            this.bunifuToolTip.SetToolTipIcon(this.radioButtonMaxIndex, null);
+            this.bunifuToolTip.SetToolTipTitle(this.radioButtonMaxIndex, "");
+            // 
+            // radioButtonMaxValue
+            // 
+            this.radioButtonMaxValue.AllowBindingControlLocation = false;
+            this.radioButtonMaxValue.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.radioButtonMaxValue.BackColor = System.Drawing.Color.Transparent;
+            this.radioButtonMaxValue.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
+            this.radioButtonMaxValue.BorderThickness = 1;
+            this.radioButtonMaxValue.Checked = true;
+            this.radioButtonMaxValue.Location = new System.Drawing.Point(235, 71);
+            this.radioButtonMaxValue.Name = "radioButtonMaxValue";
+            this.radioButtonMaxValue.OutlineColor = System.Drawing.Color.DodgerBlue;
+            this.radioButtonMaxValue.OutlineColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.radioButtonMaxValue.OutlineColorUnchecked = System.Drawing.Color.DarkGray;
+            this.radioButtonMaxValue.RadioColor = System.Drawing.Color.DodgerBlue;
+            this.radioButtonMaxValue.RadioColorTabFocused = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.radioButtonMaxValue.Size = new System.Drawing.Size(21, 21);
+            this.radioButtonMaxValue.TabIndex = 11;
+            this.radioButtonMaxValue.Text = null;
+            this.bunifuToolTip.SetToolTip(this.radioButtonMaxValue, "Виведення ряду Фібоначчі відбувається  включно до вказаного номеру в ряді");
+            this.bunifuToolTip.SetToolTipIcon(this.radioButtonMaxValue, null);
+            this.bunifuToolTip.SetToolTipTitle(this.radioButtonMaxValue, "");
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(30, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 40);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Дані";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuToolTip.SetToolTip(this.label1, "");
+            this.bunifuToolTip.SetToolTipIcon(this.label1, null);
+            this.bunifuToolTip.SetToolTipTitle(this.label1, "");
+            // 
+            // imageButtonDownload
+            // 
+            this.imageButtonDownload.ActiveImage = null;
+            this.imageButtonDownload.AllowAnimations = true;
+            this.imageButtonDownload.AllowBuffering = false;
+            this.imageButtonDownload.AllowToggling = false;
+            this.imageButtonDownload.AllowZooming = true;
+            this.imageButtonDownload.AllowZoomingOnFocus = false;
+            this.imageButtonDownload.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imageButtonDownload.BackColor = System.Drawing.Color.Transparent;
+            this.imageButtonDownload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButtonDownload.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.imageButtonDownload.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imageButtonDownload.ErrorImage")));
+            this.imageButtonDownload.FadeWhenInactive = false;
+            this.imageButtonDownload.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.imageButtonDownload.Image = global::Practice.Properties.Resources.downloading_updates_64px;
+            this.imageButtonDownload.ImageActive = null;
+            this.imageButtonDownload.ImageLocation = null;
+            this.imageButtonDownload.ImageMargin = 20;
+            this.imageButtonDownload.ImageSize = new System.Drawing.Size(30, 30);
+            this.imageButtonDownload.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.imageButtonDownload.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageButtonDownload.InitialImage")));
+            this.imageButtonDownload.Location = new System.Drawing.Point(800, 5);
+            this.imageButtonDownload.Name = "imageButtonDownload";
+            this.imageButtonDownload.Rotation = 0;
+            this.imageButtonDownload.ShowActiveImage = true;
+            this.imageButtonDownload.ShowCursorChanges = true;
+            this.imageButtonDownload.ShowImageBorders = true;
+            this.imageButtonDownload.ShowSizeMarkers = false;
+            this.imageButtonDownload.Size = new System.Drawing.Size(50, 50);
+            this.imageButtonDownload.TabIndex = 9;
+            this.bunifuToolTip.SetToolTip(this.imageButtonDownload, "Натисніть, щоб обрати файл з даними");
+            this.bunifuToolTip.SetToolTipIcon(this.imageButtonDownload, null);
+            this.imageButtonDownload.ToolTipText = "";
+            this.bunifuToolTip.SetToolTipTitle(this.imageButtonDownload, "");
+            this.imageButtonDownload.WaitOnLoad = false;
+            this.imageButtonDownload.Zoom = 20;
+            this.imageButtonDownload.ZoomSpeed = 10;
+            this.imageButtonDownload.Click += new System.EventHandler(this.ImageButtonDownload_Click);
+            // 
+            // imageButtonCreate
+            // 
+            this.imageButtonCreate.ActiveImage = global::Practice.Properties.Resources.upload_64px;
+            this.imageButtonCreate.AllowAnimations = true;
+            this.imageButtonCreate.AllowBuffering = false;
+            this.imageButtonCreate.AllowToggling = false;
+            this.imageButtonCreate.AllowZooming = true;
+            this.imageButtonCreate.AllowZoomingOnFocus = false;
+            this.imageButtonCreate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.imageButtonCreate.BackColor = System.Drawing.Color.Transparent;
+            this.imageButtonCreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imageButtonCreate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.imageButtonCreate.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imageButtonCreate.ErrorImage")));
+            this.imageButtonCreate.FadeWhenInactive = false;
+            this.imageButtonCreate.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.imageButtonCreate.Image = global::Practice.Properties.Resources.upload_64px;
+            this.imageButtonCreate.ImageActive = global::Practice.Properties.Resources.upload_64px;
+            this.imageButtonCreate.ImageLocation = null;
+            this.imageButtonCreate.ImageMargin = 20;
+            this.imageButtonCreate.ImageSize = new System.Drawing.Size(30, 30);
+            this.imageButtonCreate.ImageZoomSize = new System.Drawing.Size(50, 50);
+            this.imageButtonCreate.InitialImage = ((System.Drawing.Image)(resources.GetObject("imageButtonCreate.InitialImage")));
+            this.imageButtonCreate.Location = new System.Drawing.Point(34, 149);
+            this.imageButtonCreate.Name = "imageButtonCreate";
+            this.imageButtonCreate.Rotation = 0;
+            this.imageButtonCreate.ShowActiveImage = true;
+            this.imageButtonCreate.ShowCursorChanges = true;
+            this.imageButtonCreate.ShowImageBorders = true;
+            this.imageButtonCreate.ShowSizeMarkers = false;
+            this.imageButtonCreate.Size = new System.Drawing.Size(50, 50);
+            this.imageButtonCreate.TabIndex = 8;
+            this.bunifuToolTip.SetToolTip(this.imageButtonCreate, "");
+            this.bunifuToolTip.SetToolTipIcon(this.imageButtonCreate, null);
+            this.imageButtonCreate.ToolTipText = "Зберегти дані";
+            this.bunifuToolTip.SetToolTipTitle(this.imageButtonCreate, "");
+            this.imageButtonCreate.Visible = false;
+            this.imageButtonCreate.WaitOnLoad = false;
+            this.imageButtonCreate.Zoom = 20;
+            this.imageButtonCreate.ZoomSpeed = 10;
+            this.imageButtonCreate.Click += new System.EventHandler(this.ImageButtonCreate_Click);
             // 
             // buttonDuplication
             // 
@@ -97,7 +342,7 @@
             this.buttonDuplication.AllowToggling = false;
             this.buttonDuplication.AllowZooming = true;
             this.buttonDuplication.AllowZoomingOnFocus = false;
-            this.buttonDuplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDuplication.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonDuplication.BackColor = System.Drawing.Color.Transparent;
             this.buttonDuplication.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDuplication.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -111,7 +356,7 @@
             this.buttonDuplication.ImageSize = new System.Drawing.Size(30, 30);
             this.buttonDuplication.ImageZoomSize = new System.Drawing.Size(50, 50);
             this.buttonDuplication.InitialImage = ((System.Drawing.Image)(resources.GetObject("buttonDuplication.InitialImage")));
-            this.buttonDuplication.Location = new System.Drawing.Point(705, 107);
+            this.buttonDuplication.Location = new System.Drawing.Point(744, 149);
             this.buttonDuplication.Name = "buttonDuplication";
             this.buttonDuplication.Rotation = 0;
             this.buttonDuplication.ShowActiveImage = true;
@@ -120,8 +365,11 @@
             this.buttonDuplication.ShowSizeMarkers = false;
             this.buttonDuplication.Size = new System.Drawing.Size(50, 50);
             this.buttonDuplication.TabIndex = 7;
+            this.bunifuToolTip.SetToolTip(this.buttonDuplication, "");
+            this.bunifuToolTip.SetToolTipIcon(this.buttonDuplication, null);
             this.buttonDuplication.ToolTipText = "Числа у файлі розташовані в неправильному порядку. Натисніть, щоб відсортувати їх" +
     ".";
+            this.bunifuToolTip.SetToolTipTitle(this.buttonDuplication, "");
             this.buttonDuplication.Visible = false;
             this.buttonDuplication.WaitOnLoad = false;
             this.buttonDuplication.Zoom = 20;
@@ -135,7 +383,7 @@
             this.buttonError.AllowToggling = false;
             this.buttonError.AllowZooming = true;
             this.buttonError.AllowZoomingOnFocus = false;
-            this.buttonError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonError.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonError.BackColor = System.Drawing.Color.Transparent;
             this.buttonError.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonError.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -149,7 +397,7 @@
             this.buttonError.ImageSize = new System.Drawing.Size(30, 30);
             this.buttonError.ImageZoomSize = new System.Drawing.Size(50, 50);
             this.buttonError.InitialImage = ((System.Drawing.Image)(resources.GetObject("buttonError.InitialImage")));
-            this.buttonError.Location = new System.Drawing.Point(649, 107);
+            this.buttonError.Location = new System.Drawing.Point(688, 149);
             this.buttonError.Name = "buttonError";
             this.buttonError.Rotation = 0;
             this.buttonError.ShowActiveImage = true;
@@ -158,7 +406,10 @@
             this.buttonError.ShowSizeMarkers = false;
             this.buttonError.Size = new System.Drawing.Size(50, 50);
             this.buttonError.TabIndex = 6;
+            this.bunifuToolTip.SetToolTip(this.buttonError, "");
+            this.bunifuToolTip.SetToolTipIcon(this.buttonError, null);
             this.buttonError.ToolTipText = "";
+            this.bunifuToolTip.SetToolTipTitle(this.buttonError, "");
             this.buttonError.Visible = false;
             this.buttonError.WaitOnLoad = false;
             this.buttonError.Zoom = 20;
@@ -172,7 +423,7 @@
             this.buttonWarning.AllowToggling = false;
             this.buttonWarning.AllowZooming = true;
             this.buttonWarning.AllowZoomingOnFocus = false;
-            this.buttonWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonWarning.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonWarning.BackColor = System.Drawing.Color.Transparent;
             this.buttonWarning.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonWarning.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -186,7 +437,7 @@
             this.buttonWarning.ImageSize = new System.Drawing.Size(30, 30);
             this.buttonWarning.ImageZoomSize = new System.Drawing.Size(50, 50);
             this.buttonWarning.InitialImage = ((System.Drawing.Image)(resources.GetObject("buttonWarning.InitialImage")));
-            this.buttonWarning.Location = new System.Drawing.Point(759, 107);
+            this.buttonWarning.Location = new System.Drawing.Point(800, 149);
             this.buttonWarning.Name = "buttonWarning";
             this.buttonWarning.Rotation = 0;
             this.buttonWarning.ShowActiveImage = true;
@@ -195,198 +446,22 @@
             this.buttonWarning.ShowSizeMarkers = false;
             this.buttonWarning.Size = new System.Drawing.Size(50, 50);
             this.buttonWarning.TabIndex = 5;
+            this.bunifuToolTip.SetToolTip(this.buttonWarning, "");
+            this.bunifuToolTip.SetToolTipIcon(this.buttonWarning, null);
             this.buttonWarning.ToolTipText = "Числа у файлі розташовані в неправильному порядку. Натисніть, щоб відсортувати їх" +
     ".";
+            this.bunifuToolTip.SetToolTipTitle(this.buttonWarning, "");
             this.buttonWarning.Visible = false;
             this.buttonWarning.WaitOnLoad = false;
             this.buttonWarning.Zoom = 20;
             this.buttonWarning.ZoomSpeed = 10;
             this.buttonWarning.Click += new System.EventHandler(this.ButtonWarning_Click);
             // 
-            // buttonImport
-            // 
-            this.buttonImport.AllowAnimations = true;
-            this.buttonImport.AllowMouseEffects = true;
-            this.buttonImport.AllowToggling = false;
-            this.buttonImport.AnimationSpeed = 200;
-            this.buttonImport.AutoGenerateColors = false;
-            this.buttonImport.AutoRoundBorders = false;
-            this.buttonImport.AutoSizeLeftIcon = true;
-            this.buttonImport.AutoSizeRightIcon = true;
-            this.buttonImport.BackColor = System.Drawing.Color.Transparent;
-            this.buttonImport.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.buttonImport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImport.BackgroundImage")));
-            this.buttonImport.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonImport.ButtonText = "Імпортувати файл";
-            this.buttonImport.ButtonTextMarginLeft = 0;
-            this.buttonImport.ColorContrastOnClick = 45;
-            this.buttonImport.ColorContrastOnHover = 45;
-            this.buttonImport.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.buttonImport.CustomizableEdges = borderEdges1;
-            this.buttonImport.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonImport.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonImport.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonImport.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonImport.Enabled = false;
-            this.buttonImport.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.buttonImport.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonImport.ForeColor = System.Drawing.Color.White;
-            this.buttonImport.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImport.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonImport.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.buttonImport.IconMarginLeft = 11;
-            this.buttonImport.IconPadding = 10;
-            this.buttonImport.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonImport.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonImport.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.buttonImport.IconSize = 25;
-            this.buttonImport.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonImport.IdleBorderRadius = 40;
-            this.buttonImport.IdleBorderThickness = 1;
-            this.buttonImport.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonImport.IdleIconLeftImage = null;
-            this.buttonImport.IdleIconRightImage = null;
-            this.buttonImport.IndicateFocus = false;
-            this.buttonImport.Location = new System.Drawing.Point(439, 55);
-            this.buttonImport.Name = "buttonImport";
-            this.buttonImport.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonImport.OnDisabledState.BorderRadius = 40;
-            this.buttonImport.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonImport.OnDisabledState.BorderThickness = 1;
-            this.buttonImport.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonImport.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonImport.OnDisabledState.IconLeftImage = null;
-            this.buttonImport.OnDisabledState.IconRightImage = null;
-            this.buttonImport.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonImport.onHoverState.BorderRadius = 40;
-            this.buttonImport.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonImport.onHoverState.BorderThickness = 1;
-            this.buttonImport.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonImport.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonImport.onHoverState.IconLeftImage = null;
-            this.buttonImport.onHoverState.IconRightImage = null;
-            this.buttonImport.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonImport.OnIdleState.BorderRadius = 40;
-            this.buttonImport.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonImport.OnIdleState.BorderThickness = 1;
-            this.buttonImport.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonImport.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.buttonImport.OnIdleState.IconLeftImage = null;
-            this.buttonImport.OnIdleState.IconRightImage = null;
-            this.buttonImport.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonImport.OnPressedState.BorderRadius = 40;
-            this.buttonImport.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonImport.OnPressedState.BorderThickness = 1;
-            this.buttonImport.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonImport.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.buttonImport.OnPressedState.IconLeftImage = null;
-            this.buttonImport.OnPressedState.IconRightImage = null;
-            this.buttonImport.Size = new System.Drawing.Size(150, 40);
-            this.buttonImport.TabIndex = 4;
-            this.buttonImport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonImport.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.buttonImport.TextMarginLeft = 0;
-            this.buttonImport.TextPadding = new System.Windows.Forms.Padding(0);
-            this.buttonImport.UseDefaultRadiusAndThickness = true;
-            this.buttonImport.Click += new System.EventHandler(this.ButtonImport_Click);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.AllowAnimations = true;
-            this.buttonSearch.AllowMouseEffects = true;
-            this.buttonSearch.AllowToggling = false;
-            this.buttonSearch.AnimationSpeed = 200;
-            this.buttonSearch.AutoGenerateColors = false;
-            this.buttonSearch.AutoRoundBorders = false;
-            this.buttonSearch.AutoSizeLeftIcon = true;
-            this.buttonSearch.AutoSizeRightIcon = true;
-            this.buttonSearch.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSearch.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.buttonSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSearch.BackgroundImage")));
-            this.buttonSearch.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonSearch.ButtonText = "Огляд...";
-            this.buttonSearch.ButtonTextMarginLeft = 0;
-            this.buttonSearch.ColorContrastOnClick = 45;
-            this.buttonSearch.ColorContrastOnHover = 45;
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.buttonSearch.CustomizableEdges = borderEdges2;
-            this.buttonSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonSearch.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonSearch.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonSearch.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.buttonSearch.IconMarginLeft = 11;
-            this.buttonSearch.IconPadding = 10;
-            this.buttonSearch.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSearch.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonSearch.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.buttonSearch.IconSize = 25;
-            this.buttonSearch.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSearch.IdleBorderRadius = 40;
-            this.buttonSearch.IdleBorderThickness = 1;
-            this.buttonSearch.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSearch.IdleIconLeftImage = null;
-            this.buttonSearch.IdleIconRightImage = null;
-            this.buttonSearch.IndicateFocus = false;
-            this.buttonSearch.Location = new System.Drawing.Point(700, 10);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonSearch.OnDisabledState.BorderRadius = 40;
-            this.buttonSearch.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonSearch.OnDisabledState.BorderThickness = 1;
-            this.buttonSearch.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonSearch.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonSearch.OnDisabledState.IconLeftImage = null;
-            this.buttonSearch.OnDisabledState.IconRightImage = null;
-            this.buttonSearch.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonSearch.onHoverState.BorderRadius = 40;
-            this.buttonSearch.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonSearch.onHoverState.BorderThickness = 1;
-            this.buttonSearch.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonSearch.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.onHoverState.IconLeftImage = null;
-            this.buttonSearch.onHoverState.IconRightImage = null;
-            this.buttonSearch.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSearch.OnIdleState.BorderRadius = 40;
-            this.buttonSearch.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonSearch.OnIdleState.BorderThickness = 1;
-            this.buttonSearch.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonSearch.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.OnIdleState.IconLeftImage = null;
-            this.buttonSearch.OnIdleState.IconRightImage = null;
-            this.buttonSearch.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonSearch.OnPressedState.BorderRadius = 40;
-            this.buttonSearch.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonSearch.OnPressedState.BorderThickness = 1;
-            this.buttonSearch.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonSearch.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.OnPressedState.IconLeftImage = null;
-            this.buttonSearch.OnPressedState.IconRightImage = null;
-            this.buttonSearch.Size = new System.Drawing.Size(75, 40);
-            this.buttonSearch.TabIndex = 1;
-            this.buttonSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonSearch.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.buttonSearch.TextMarginLeft = 0;
-            this.buttonSearch.TextPadding = new System.Windows.Forms.Padding(0);
-            this.buttonSearch.UseDefaultRadiusAndThickness = true;
-            // 
             // textBoxPathFile
             // 
             this.textBoxPathFile.AcceptsReturn = false;
             this.textBoxPathFile.AcceptsTab = false;
+            this.textBoxPathFile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxPathFile.AnimationSpeed = 200;
             this.textBoxPathFile.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.textBoxPathFile.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -411,7 +486,7 @@
             this.textBoxPathFile.IconRight = null;
             this.textBoxPathFile.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxPathFile.Lines = new string[0];
-            this.textBoxPathFile.Location = new System.Drawing.Point(210, 10);
+            this.textBoxPathFile.Location = new System.Drawing.Point(235, 10);
             this.textBoxPathFile.MaxLength = 32767;
             this.textBoxPathFile.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxPathFile.Modified = false;
@@ -447,7 +522,7 @@
             this.textBoxPathFile.SelectionLength = 0;
             this.textBoxPathFile.SelectionStart = 0;
             this.textBoxPathFile.ShortcutsEnabled = true;
-            this.textBoxPathFile.Size = new System.Drawing.Size(460, 39);
+            this.textBoxPathFile.Size = new System.Drawing.Size(540, 39);
             this.textBoxPathFile.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.textBoxPathFile.TabIndex = 0;
             this.textBoxPathFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -455,105 +530,19 @@
             this.textBoxPathFile.TextMarginLeft = 3;
             this.textBoxPathFile.TextMarginTop = 1;
             this.textBoxPathFile.TextPlaceholder = "Введіть шлях";
+            this.bunifuToolTip.SetToolTip(this.textBoxPathFile, "");
+            this.bunifuToolTip.SetToolTipIcon(this.textBoxPathFile, null);
+            this.bunifuToolTip.SetToolTipTitle(this.textBoxPathFile, "");
             this.textBoxPathFile.UseSystemPasswordChar = false;
             this.textBoxPathFile.WordWrap = true;
-            // 
-            // buttonCreate
-            // 
-            this.buttonCreate.AllowAnimations = true;
-            this.buttonCreate.AllowMouseEffects = true;
-            this.buttonCreate.AllowToggling = false;
-            this.buttonCreate.AnimationSpeed = 200;
-            this.buttonCreate.AutoGenerateColors = false;
-            this.buttonCreate.AutoRoundBorders = false;
-            this.buttonCreate.AutoSizeLeftIcon = true;
-            this.buttonCreate.AutoSizeRightIcon = true;
-            this.buttonCreate.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCreate.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.buttonCreate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCreate.BackgroundImage")));
-            this.buttonCreate.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonCreate.ButtonText = "Зберегти зміни";
-            this.buttonCreate.ButtonTextMarginLeft = 0;
-            this.buttonCreate.ColorContrastOnClick = 45;
-            this.buttonCreate.ColorContrastOnHover = 45;
-            this.buttonCreate.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.buttonCreate.CustomizableEdges = borderEdges3;
-            this.buttonCreate.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonCreate.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonCreate.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonCreate.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonCreate.Enabled = false;
-            this.buttonCreate.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
-            this.buttonCreate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonCreate.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCreate.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonCreate.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.buttonCreate.IconMarginLeft = 11;
-            this.buttonCreate.IconPadding = 10;
-            this.buttonCreate.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonCreate.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.buttonCreate.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.buttonCreate.IconSize = 25;
-            this.buttonCreate.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonCreate.IdleBorderRadius = 40;
-            this.buttonCreate.IdleBorderThickness = 1;
-            this.buttonCreate.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonCreate.IdleIconLeftImage = null;
-            this.buttonCreate.IdleIconRightImage = null;
-            this.buttonCreate.IndicateFocus = false;
-            this.buttonCreate.Location = new System.Drawing.Point(210, 56);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.buttonCreate.OnDisabledState.BorderRadius = 40;
-            this.buttonCreate.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonCreate.OnDisabledState.BorderThickness = 1;
-            this.buttonCreate.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonCreate.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonCreate.OnDisabledState.IconLeftImage = null;
-            this.buttonCreate.OnDisabledState.IconRightImage = null;
-            this.buttonCreate.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonCreate.onHoverState.BorderRadius = 40;
-            this.buttonCreate.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonCreate.onHoverState.BorderThickness = 1;
-            this.buttonCreate.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.buttonCreate.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.onHoverState.IconLeftImage = null;
-            this.buttonCreate.onHoverState.IconRightImage = null;
-            this.buttonCreate.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonCreate.OnIdleState.BorderRadius = 40;
-            this.buttonCreate.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonCreate.OnIdleState.BorderThickness = 1;
-            this.buttonCreate.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.buttonCreate.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.OnIdleState.IconLeftImage = null;
-            this.buttonCreate.OnIdleState.IconRightImage = null;
-            this.buttonCreate.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonCreate.OnPressedState.BorderRadius = 40;
-            this.buttonCreate.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
-            this.buttonCreate.OnPressedState.BorderThickness = 1;
-            this.buttonCreate.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.buttonCreate.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.buttonCreate.OnPressedState.IconLeftImage = null;
-            this.buttonCreate.OnPressedState.IconRightImage = null;
-            this.buttonCreate.Size = new System.Drawing.Size(150, 40);
-            this.buttonCreate.TabIndex = 3;
-            this.buttonCreate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonCreate.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.buttonCreate.TextMarginLeft = 0;
-            this.buttonCreate.TextPadding = new System.Windows.Forms.Padding(0);
-            this.buttonCreate.UseDefaultRadiusAndThickness = true;
-            this.buttonCreate.Click += new System.EventHandler(this.ButtonCreate_Click);
+            this.textBoxPathFile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxLengthTextBox);
             // 
             // buttonResult
             // 
             this.buttonResult.AllowAnimations = true;
             this.buttonResult.AllowMouseEffects = true;
             this.buttonResult.AllowToggling = false;
+            this.buttonResult.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonResult.AnimationSpeed = 200;
             this.buttonResult.AutoGenerateColors = false;
             this.buttonResult.AutoRoundBorders = false;
@@ -567,12 +556,12 @@
             this.buttonResult.ButtonTextMarginLeft = 0;
             this.buttonResult.ColorContrastOnClick = 45;
             this.buttonResult.ColorContrastOnHover = 45;
-            this.buttonResult.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.buttonResult.CustomizableEdges = borderEdges4;
+            this.buttonResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.buttonResult.CustomizableEdges = borderEdges1;
             this.buttonResult.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonResult.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonResult.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -597,7 +586,7 @@
             this.buttonResult.IdleIconLeftImage = null;
             this.buttonResult.IdleIconRightImage = null;
             this.buttonResult.IndicateFocus = false;
-            this.buttonResult.Location = new System.Drawing.Point(332, 118);
+            this.buttonResult.Location = new System.Drawing.Point(481, 110);
             this.buttonResult.Name = "buttonResult";
             this.buttonResult.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.buttonResult.OnDisabledState.BorderRadius = 40;
@@ -637,12 +626,16 @@
             this.buttonResult.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.buttonResult.TextMarginLeft = 0;
             this.buttonResult.TextPadding = new System.Windows.Forms.Padding(0);
+            this.bunifuToolTip.SetToolTip(this.buttonResult, "");
+            this.bunifuToolTip.SetToolTipIcon(this.buttonResult, null);
+            this.bunifuToolTip.SetToolTipTitle(this.buttonResult, "");
             this.buttonResult.UseDefaultRadiusAndThickness = true;
             // 
             // textBoxMaxNumber
             // 
             this.textBoxMaxNumber.AcceptsReturn = false;
             this.textBoxMaxNumber.AcceptsTab = false;
+            this.textBoxMaxNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBoxMaxNumber.AnimationSpeed = 200;
             this.textBoxMaxNumber.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.textBoxMaxNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -667,7 +660,7 @@
             this.textBoxMaxNumber.IconRight = null;
             this.textBoxMaxNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMaxNumber.Lines = new string[0];
-            this.textBoxMaxNumber.Location = new System.Drawing.Point(37, 118);
+            this.textBoxMaxNumber.Location = new System.Drawing.Point(235, 110);
             this.textBoxMaxNumber.MaxLength = 30;
             this.textBoxMaxNumber.MinimumSize = new System.Drawing.Size(1, 1);
             this.textBoxMaxNumber.Modified = false;
@@ -703,7 +696,7 @@
             this.textBoxMaxNumber.SelectionLength = 0;
             this.textBoxMaxNumber.SelectionStart = 0;
             this.textBoxMaxNumber.ShortcutsEnabled = true;
-            this.textBoxMaxNumber.Size = new System.Drawing.Size(210, 39);
+            this.textBoxMaxNumber.Size = new System.Drawing.Size(210, 40);
             this.textBoxMaxNumber.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.textBoxMaxNumber.TabIndex = 2;
             this.textBoxMaxNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -711,24 +704,32 @@
             this.textBoxMaxNumber.TextMarginLeft = 3;
             this.textBoxMaxNumber.TextMarginTop = 1;
             this.textBoxMaxNumber.TextPlaceholder = "Введіть число";
+            this.bunifuToolTip.SetToolTip(this.textBoxMaxNumber, "");
+            this.bunifuToolTip.SetToolTipIcon(this.textBoxMaxNumber, null);
+            this.bunifuToolTip.SetToolTipTitle(this.textBoxMaxNumber, "");
             this.textBoxMaxNumber.UseSystemPasswordChar = false;
             this.textBoxMaxNumber.WordWrap = true;
+            this.textBoxMaxNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxLengthTextBox);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dataResults);
             this.panel3.Controls.Add(this.labelErrorData);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(5, 178);
+            this.panel3.Location = new System.Drawing.Point(5, 210);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(840, 359);
+            this.panel3.Size = new System.Drawing.Size(885, 327);
             this.panel3.TabIndex = 7;
+            this.bunifuToolTip.SetToolTip(this.panel3, "");
+            this.bunifuToolTip.SetToolTipIcon(this.panel3, null);
+            this.bunifuToolTip.SetToolTipTitle(this.panel3, "");
             // 
             // dataResults
             // 
             this.dataResults.AllowUserToAddRows = false;
             this.dataResults.AllowUserToDeleteRows = false;
             this.dataResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataResults.BackgroundColor = System.Drawing.Color.White;
             this.dataResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataResults.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataResults.ColumnHeadersHeight = 40;
@@ -739,29 +740,144 @@
             this.dataResults.Location = new System.Drawing.Point(0, 180);
             this.dataResults.Name = "dataResults";
             this.dataResults.ReadOnly = true;
-            this.dataResults.Size = new System.Drawing.Size(840, 179);
+            this.dataResults.RowHeadersVisible = false;
+            this.dataResults.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataResults.RowTemplate.Height = 40;
+            this.dataResults.Size = new System.Drawing.Size(885, 147);
             this.dataResults.TabIndex = 3;
+            this.bunifuToolTip.SetToolTip(this.dataResults, "");
+            this.bunifuToolTip.SetToolTipIcon(this.dataResults, null);
+            this.bunifuToolTip.SetToolTipTitle(this.dataResults, "");
             // 
             // labelErrorData
             // 
+            this.labelErrorData.BackColor = System.Drawing.Color.White;
             this.labelErrorData.Dock = System.Windows.Forms.DockStyle.Top;
             this.labelErrorData.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelErrorData.Location = new System.Drawing.Point(0, 0);
             this.labelErrorData.Name = "labelErrorData";
-            this.labelErrorData.Size = new System.Drawing.Size(840, 180);
+            this.labelErrorData.Size = new System.Drawing.Size(885, 180);
             this.labelErrorData.TabIndex = 2;
             this.labelErrorData.Text = "Дані відсутні";
             this.labelErrorData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuToolTip.SetToolTip(this.labelErrorData, "");
+            this.bunifuToolTip.SetToolTipIcon(this.labelErrorData, null);
+            this.bunifuToolTip.SetToolTipTitle(this.labelErrorData, "");
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // bunifuToolTip
+            // 
+            this.bunifuToolTip.Active = true;
+            this.bunifuToolTip.AlignTextWithTitle = false;
+            this.bunifuToolTip.AllowAutoClose = false;
+            this.bunifuToolTip.AllowFading = true;
+            this.bunifuToolTip.AutoCloseDuration = 5000;
+            this.bunifuToolTip.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuToolTip.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bunifuToolTip.ClickToShowDisplayControl = false;
+            this.bunifuToolTip.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip.DisplayControl = null;
+            this.bunifuToolTip.EntryAnimationSpeed = 350;
+            this.bunifuToolTip.ExitAnimationSpeed = 200;
+            this.bunifuToolTip.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip.IconMargin = 6;
+            this.bunifuToolTip.InitialDelay = 0;
+            this.bunifuToolTip.Name = "bunifuToolTip";
+            this.bunifuToolTip.Opacity = 1D;
+            this.bunifuToolTip.OverrideToolTipTitles = false;
+            this.bunifuToolTip.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip.ReshowDelay = 100;
+            this.bunifuToolTip.ShowAlways = true;
+            this.bunifuToolTip.ShowBorders = false;
+            this.bunifuToolTip.ShowIcons = true;
+            this.bunifuToolTip.ShowShadows = true;
+            this.bunifuToolTip.Tag = null;
+            this.bunifuToolTip.TextFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuToolTip.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuToolTip.TextMargin = 2;
+            this.bunifuToolTip.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip.ToolTipTitle = null;
+            // 
+            // bunifuSnackbar
+            // 
+            this.bunifuSnackbar.AllowDragging = false;
+            this.bunifuSnackbar.AllowMultipleViews = true;
+            this.bunifuSnackbar.ClickToClose = true;
+            this.bunifuSnackbar.DoubleClickToClose = true;
+            this.bunifuSnackbar.DurationAfterIdle = 3000;
+            this.bunifuSnackbar.ErrorOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.ErrorOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.ErrorOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar.ErrorOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar.ErrorOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.ErrorOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.ErrorOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.ErrorOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(204)))), ((int)(((byte)(199)))));
+            this.bunifuSnackbar.ErrorOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar.ErrorOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.ErrorOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon")));
+            this.bunifuSnackbar.ErrorOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar.FadeCloseIcon = false;
+            this.bunifuSnackbar.Host = Bunifu.UI.WinForms.BunifuSnackbar.Hosts.FormOwner;
+            this.bunifuSnackbar.InformationOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.InformationOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.InformationOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar.InformationOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar.InformationOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.InformationOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.InformationOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.InformationOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.InformationOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar.InformationOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.InformationOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon1")));
+            this.bunifuSnackbar.InformationOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar.Margin = 10;
+            this.bunifuSnackbar.MaximumSize = new System.Drawing.Size(0, 0);
+            this.bunifuSnackbar.MaximumViews = 7;
+            this.bunifuSnackbar.MessageRightMargin = 15;
+            this.bunifuSnackbar.MinimumSize = new System.Drawing.Size(0, 0);
+            this.bunifuSnackbar.ShowBorders = false;
+            this.bunifuSnackbar.ShowCloseIcon = false;
+            this.bunifuSnackbar.ShowIcon = true;
+            this.bunifuSnackbar.ShowShadows = true;
+            this.bunifuSnackbar.SuccessOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.SuccessOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.SuccessOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar.SuccessOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar.SuccessOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.SuccessOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.SuccessOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.SuccessOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(255)))), ((int)(((byte)(237)))));
+            this.bunifuSnackbar.SuccessOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar.SuccessOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.SuccessOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon2")));
+            this.bunifuSnackbar.SuccessOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar.ViewsMargin = 7;
+            this.bunifuSnackbar.WarningOptions.ActionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.WarningOptions.ActionBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSnackbar.WarningOptions.ActionBorderRadius = 1;
+            this.bunifuSnackbar.WarningOptions.ActionFont = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.bunifuSnackbar.WarningOptions.ActionForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.WarningOptions.BackColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.WarningOptions.BorderColor = System.Drawing.Color.White;
+            this.bunifuSnackbar.WarningOptions.CloseIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(143)))));
+            this.bunifuSnackbar.WarningOptions.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.bunifuSnackbar.WarningOptions.ForeColor = System.Drawing.Color.Black;
+            this.bunifuSnackbar.WarningOptions.Icon = ((System.Drawing.Image)(resources.GetObject("resource.Icon3")));
+            this.bunifuSnackbar.WarningOptions.IconLeftMargin = 12;
+            this.bunifuSnackbar.ZoomCloseIcon = true;
+            // 
             // FormTaskFour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 542);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(895, 542);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -769,6 +885,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Завдання №4";
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataResults)).EndInit();
             this.ResumeLayout(false);
@@ -777,19 +894,27 @@
 
         #endregion
         private Bunifu.UI.WinForms.BunifuTextBox textBoxPathFile;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonSearch;
         private Bunifu.UI.WinForms.BunifuTextBox textBoxMaxNumber;
         private System.Windows.Forms.Label labelPathFile;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonResult;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelErrorData;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonCreate;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.DataGridView dataResults;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 buttonImport;
         private Bunifu.UI.WinForms.BunifuImageButton buttonError;
         private Bunifu.UI.WinForms.BunifuImageButton buttonWarning;
         private Bunifu.UI.WinForms.BunifuImageButton buttonDuplication;
+        private Bunifu.UI.WinForms.BunifuImageButton imageButtonDownload;
+        private Bunifu.UI.WinForms.BunifuImageButton imageButtonCreate;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuRadioButton radioButtonMaxIndex;
+        private Bunifu.UI.WinForms.BunifuRadioButton radioButtonMaxValue;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.UI.WinForms.BunifuImageButton imageButtonSearch;
+        private Bunifu.UI.WinForms.BunifuSnackbar bunifuSnackbar;
     }
 }

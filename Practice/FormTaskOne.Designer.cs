@@ -485,10 +485,10 @@
             this.pages.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.pages.Multiline = true;
             this.pages.Name = "pages";
-            this.pages.Page = this.tabPage2;
-            this.pages.PageIndex = 1;
-            this.pages.PageName = "tabPage2";
-            this.pages.PageTitle = "condition_2";
+            this.pages.Page = this.tabPage1;
+            this.pages.PageIndex = 0;
+            this.pages.PageName = "tabPage1";
+            this.pages.PageTitle = "condition_1";
             this.pages.SelectedIndex = 0;
             this.pages.Size = new System.Drawing.Size(880, 201);
             this.pages.TabIndex = 7;
@@ -622,7 +622,7 @@
             this.bunifuToolTip.SetToolTipTitle(this.textBoxMax, "");
             this.textBoxMax.UseSystemPasswordChar = false;
             this.textBoxMax.WordWrap = true;
-            this.textBoxMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BunifuTextBoxMax_KeyPress);
+            this.textBoxMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxLengthTextBox);
             // 
             // label3
             // 
@@ -716,6 +716,7 @@
             this.bunifuToolTip.SetToolTipTitle(this.textBoxArgument_1, "");
             this.textBoxArgument_1.UseSystemPasswordChar = false;
             this.textBoxArgument_1.WordWrap = true;
+            this.textBoxArgument_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxLengthTextBox);
             // 
             // tabPage2
             // 
@@ -954,6 +955,7 @@
             this.bunifuToolTip.SetToolTipTitle(this.textBoxArgument_2, "");
             this.textBoxArgument_2.UseSystemPasswordChar = false;
             this.textBoxArgument_2.WordWrap = true;
+            this.textBoxArgument_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MaxLengthTextBox);
             // 
             // tableLayoutPanel2
             // 

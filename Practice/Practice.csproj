@@ -175,6 +175,12 @@
     <Compile Include="FormCreateFiles.Designer.cs">
       <DependentUpon>FormCreateFiles.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSerch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSerch.Designer.cs">
+      <DependentUpon>FormSerch.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaskFive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormCreateFiles.resx">
       <DependentUpon>FormCreateFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSerch.resx">
+      <DependentUpon>FormSerch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaskFive.resx">
       <DependentUpon>FormTaskFive.cs</DependentUpon>
@@ -324,6 +333,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\info_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\function6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downloading_updates_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_more_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_out_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_in_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

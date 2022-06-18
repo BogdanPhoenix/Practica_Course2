@@ -25,10 +25,8 @@ namespace Practice
         {
             InitializeComponent();
             textBoxArgument_1.KeyPress += CommonFunctionality.CheckDigit;
-            textBoxArgument_1.KeyPress += MaxLengthTextBox;
             textBoxArgument_2.KeyPress += CommonFunctionality.CheckDigit;
-            textBoxArgument_2.KeyPress += MaxLengthTextBox;
-            textBoxMax.KeyPress += MaxLengthTextBox;
+            textBoxMax.KeyPress += CommonFunctionality.OnlyDigit;
 
             textBoxArgument_1.TextChanged += (s, e) => { CheckActive(); };
             textBoxArgument_2.TextChanged += (s, e) => { CheckActive(); };
@@ -36,15 +34,6 @@ namespace Practice
         }
 
         #region Пункт 1
-        /// <summary>
-        /// Маска для поля, яке отримує дані про кількість ітерацій циклу
-        /// </summary>
-        /// <param name="sender">Об'єкт текстового поля</param>
-        /// <param name="e">Базовый клас для класів, який містить дані про властивість натиску на клавішу та надає її функціонал</param>
-        private void BunifuTextBoxMax_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = ((e.KeyChar == '0' && textBoxMax.Text.Length == 0) || e.KeyChar == '.' || e.KeyChar == ',' || !char.IsDigit(e.KeyChar)) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Delete;
-        }
         /// <summary>
         /// Метод для отримання загальної суми для першого пункту
         /// </summary>

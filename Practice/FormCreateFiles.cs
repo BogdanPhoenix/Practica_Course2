@@ -7,7 +7,15 @@ namespace Practice
 {
     public partial class FormCreateFiles : Form
     {
+        /// <summary>
+        /// Таблиця в яку заносяться дані із файлу
+        /// </summary>
         private DataTable dataTable = null;
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="nameFileSave">Шлях до файла</param>
+        /// <param name="data"></param>
         public FormCreateFiles(string nameFileSave, DataGridView data)
         {
             InitializeComponent();
@@ -25,6 +33,10 @@ namespace Practice
             }
             dropdownTypeSave.SelectedIndexChanged += (s, e) => { CheckNumbering(); };
         }
+        /// <summary>
+        /// Метод для зчитування даних з графічної таблиці у звичайну для подальшого зберігання
+        /// </summary>
+        /// <param name="dataGridView"></param>
         private void ReadData(DataGridView dataGridView)
         {
             dataTable = new DataTable();
@@ -45,6 +57,11 @@ namespace Practice
                 }
             }
         }
+        /// <summary>
+        /// Метод для варіанту зберігання даних у файл
+        /// </summary>
+        /// <param name="sender">Об'єкт кнопки</param>
+        /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
         private void DropdownTypeFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             dropdownTypeSave.Items.Clear();
@@ -60,7 +77,9 @@ namespace Practice
             dropdownTypeSave.SelectedIndex = 0;
             CheckNumbering();
         }
-
+        /// <summary>
+        /// Метод для перевірки чи відображати поле для вибору додання номерації чи ні
+        /// </summary>
         private void CheckNumbering()
         {
             if(dropdownTypeFile.Text == ".xlsx" || dropdownTypeSave.Text.ToLower() == "таблиця")
@@ -73,7 +92,11 @@ namespace Practice
                 checkBoxAddNumbering.Visible = labelAddNumbering.Visible = true;
             }
         }
-
+        /// <summary>
+        /// Метод для вибору файлу в який буде здійснюватися зберігання
+        /// </summary>
+        /// <param name="sender">Об'єкт кнопки</param>
+        /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
         private void ButtonImport_Click(object sender, EventArgs e)
         {
             saveFileDialog.Filter = $"File (*{dropdownTypeFile.Text})|*{dropdownTypeFile.Text}";
@@ -84,7 +107,11 @@ namespace Practice
             }
             buttonSave.Enabled = textBoxPathFile.Text.Length > 0;
         }
-
+        /// <summary>
+        /// Метод для збереження даних у файл
+        /// </summary>
+        /// <param name="sender">Об'єкт кнопки</param>
+        /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             if (textBoxPathFile.Text.EndsWith(dropdownTypeFile.Text))
@@ -115,6 +142,5 @@ namespace Practice
                 MessageBox.Show($"Розширення файлу, яке ви ввели не збігається з тим, що вибране в пункті \"Тип файлу\". Вкажіть відповідний тип файлу", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
