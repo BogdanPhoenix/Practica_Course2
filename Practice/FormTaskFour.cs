@@ -59,12 +59,12 @@ namespace Practice
             textBoxPathFile.KeyPress += (s, e) => { if (e.KeyChar == (char)Keys.Enter) ImageButtonDownload_Click(imageButtonDownload, new EventArgs()); };
             textBoxPathFile.TextChanged += (s, e) => { imageButtonDownload.ToolTipText = textBoxPathFile.Text.Length != 0 ? "Натисніть, щоб імпортувати вибраний файл" : "Натисніть, щоб обрати файл з даними"; };
 
-            buttonResult.Click += (s, e) => { DataResultPrint(FibonachiNumbers()); formSerch.UpdateForm(); };
+            buttonResult.Click += (s, e) => { fibonachi = FibonachiNumbers(); DataResultPrint(fibonachi); formSerch.UpdateForm(); };
             buttonError.Click += (s, e) => { DeleteErrorOrDuplication(s, extraError); };
             buttonDuplication.Click += (s, e) => { DeleteErrorOrDuplication(s, duplicatError); };
-            imageButtonSearch.Click += (s, e) => { formSerch.Show(); };
+            imageButtonSearch.Click += (s, e) => { formSerch.UpdateForm(); formSerch.Show(); };
 
-            this.Resize += (s, e) => { DataResultPrint(fibonachi); };
+            Resize += (s, e) => { DataResultPrint(fibonachi); };
         }
         /// <summary>
         /// Метод для генерування ряду Фібоначчі
@@ -113,9 +113,9 @@ namespace Practice
         /// <param name="dictionary">Колекцію з координатами та значеннями ряду</param>
         private void DataResultPrint(Dictionary<int, decimal> dictionary)
         {
-            dataResults.Columns.Clear();
             if (textBoxMaxNumber.Text.Length != 0)
             {
+                dataResults.Columns.Clear();
                 labelErrorData.Height = 0;
                 imageButtonSearch.Visible = imageButtonCreate.Visible = dataResults.Visible = true;
 
@@ -282,10 +282,9 @@ namespace Practice
         /// </summary>
         /// <param name="sender">Об'єкт кнопки</param>
         /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
-        private void ButtonWarning_Click(object sender, EventArgs e)
+        private void ButtonSort_Click(object sender, EventArgs e)
         {
             int index = 0;
-            Dictionary<decimal, int> buffer = new Dictionary<decimal, int>();
             var sortedDict = from entry in fibonachi orderby entry.Value ascending select entry;
             fibonachi = sortedDict.ToDictionary(entry => index++, entry => entry.Value);
             extraError = extraError.ToDictionary(entry => entry.Key, entry => fibonachi.FirstOrDefault(x => x.Value == entry.Key).Value);
@@ -343,6 +342,7 @@ namespace Practice
                     case ".txt": dataTable = TXTDocument.ImportTXTFile(textBoxPathFile.Text); break;
                     case ".docx": dataTable = WordDocument.ImportWordFile(textBoxPathFile.Text); break;
                     case ".xlsx": dataTable = ExcelDocument.ImportExcelFile(textBoxPathFile.Text); break;
+                    default: MessageBox.Show("Вибраний вами файл має розширення, з яким не працює програма.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
                 }
                 fibonachi.Clear();
                 foreach (DataRow row in dataTable.Rows)
@@ -359,6 +359,7 @@ namespace Practice
                     }
                 }
                 textBoxMaxNumber.Text = fibonachi.Values.Max().ToString();
+                radioButtonMaxValue.Checked = true;
                 DataResultPrint(fibonachi);
             }
             catch (IOException ex)
@@ -382,6 +383,15 @@ namespace Practice
             {
                 bunifuSnackbar.Show(ParentForm, $"Ви ввели максимальну кількість символів ({textBox.MaxLength})");
             }
+        }
+        /// <summary>
+        /// Метод для очищення поля для введення значення або номеру ряду Фібоначчі
+        /// </summary>
+        /// <param name="sender">Об'єкт кнопки</param>
+        /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
+        private void ClearMaxValue_Click(object sender, EventArgs e)
+        {
+            textBoxMaxNumber.Text = "";
         }
     }
 }

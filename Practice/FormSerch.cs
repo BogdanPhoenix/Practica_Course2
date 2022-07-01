@@ -32,7 +32,6 @@ namespace Practice
             textBoxIndex.KeyPress += CommonFunctionality.OnlyDigit;
             textBoxIndex.KeyPress += TextBoxIndex_KeyPress;
 
-            bunifuButtonClose.Click += (s, e) => { Hide(); };
             bunifuButtonMinimized.Click += (s, e) => { WindowState = FormWindowState.Minimized; };
         }
         /// <summary>
@@ -85,6 +84,17 @@ namespace Practice
         {
             textBoxIndex.Text = "";
             labelResult.Text = "Дані відсутні";
+        }
+        /// <summary>
+        /// Метод для виходу з форми
+        /// </summary>
+        /// <param name="sender">Об'єкт кнопки</param>
+        /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
+        private void BunifuButtonClose_Click(object sender, EventArgs e)
+        {
+            Data[indexColumn, indexRow].Style.BackColor = Color.White;
+            Data[indexColumn, indexRow].Style.ForeColor = Color.Black; 
+            Hide();
         }
     }
 }

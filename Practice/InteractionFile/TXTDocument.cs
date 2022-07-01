@@ -49,6 +49,12 @@ namespace Practice
             }
             return dataTable;
         }
+        /// <summary>
+        /// Метод для створення текстового файлу та занесення в нього даних
+        /// </summary>
+        /// <param name="nameCreateFile">Шлях до файлу</param>
+        /// <param name="data">Дані для занесення у файл</param>
+        /// <param name="addNumbering">Ідентифікатор чи додати у файл нумерацію даних</param>
         public static void ExportTXTFile(string nameCreateFile, DataTable data, bool addNumbering)
         {
             StreamWriter file = null;

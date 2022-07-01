@@ -131,7 +131,7 @@
             borderEdges1.TopRight = true;
             this.buttonActiveGraph.CustomizableEdges = borderEdges1;
             this.buttonActiveGraph.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonActiveGraph.Image = global::Practice.Properties.Resources.back_arrow_64px;
+            this.buttonActiveGraph.Image = global::Practice.Properties.Resources.open_arrow_64px;
             this.buttonActiveGraph.ImageMargin = new System.Windows.Forms.Padding(0);
             this.buttonActiveGraph.Location = new System.Drawing.Point(0, 240);
             this.buttonActiveGraph.Name = "buttonActiveGraph";
