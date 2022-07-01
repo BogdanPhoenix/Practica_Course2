@@ -203,6 +203,7 @@
             this.radioButtonMaxIndex.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioButtonMaxIndex.BorderThickness = 1;
             this.radioButtonMaxIndex.Checked = false;
+            this.radioButtonMaxIndex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonMaxIndex.Location = new System.Drawing.Point(545, 70);
             this.radioButtonMaxIndex.Name = "radioButtonMaxIndex";
             this.radioButtonMaxIndex.OutlineColor = System.Drawing.Color.DodgerBlue;
@@ -216,6 +217,7 @@
             this.bunifuToolTip.SetToolTip(this.radioButtonMaxIndex, "Виведення ряду Фібоначчі відбувається  включно до вказаного номеру в ряді");
             this.bunifuToolTip.SetToolTipIcon(this.radioButtonMaxIndex, null);
             this.bunifuToolTip.SetToolTipTitle(this.radioButtonMaxIndex, "");
+            this.radioButtonMaxIndex.Click += new System.EventHandler(this.ClearMaxValue_Click);
             // 
             // radioButtonMaxValue
             // 
@@ -225,6 +227,7 @@
             this.radioButtonMaxValue.BindingControlPosition = Bunifu.UI.WinForms.BunifuRadioButton.BindingControlPositions.Right;
             this.radioButtonMaxValue.BorderThickness = 1;
             this.radioButtonMaxValue.Checked = true;
+            this.radioButtonMaxValue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButtonMaxValue.Location = new System.Drawing.Point(235, 71);
             this.radioButtonMaxValue.Name = "radioButtonMaxValue";
             this.radioButtonMaxValue.OutlineColor = System.Drawing.Color.DodgerBlue;
@@ -238,6 +241,7 @@
             this.bunifuToolTip.SetToolTip(this.radioButtonMaxValue, "Виведення ряду Фібоначчі відбувається  включно до вказаного номеру в ряді");
             this.bunifuToolTip.SetToolTipIcon(this.radioButtonMaxValue, null);
             this.bunifuToolTip.SetToolTipTitle(this.radioButtonMaxValue, "");
+            this.radioButtonMaxValue.Click += new System.EventHandler(this.ClearMaxValue_Click);
             // 
             // label1
             // 
@@ -455,7 +459,7 @@
             this.buttonWarning.WaitOnLoad = false;
             this.buttonWarning.Zoom = 20;
             this.buttonWarning.ZoomSpeed = 10;
-            this.buttonWarning.Click += new System.EventHandler(this.ButtonWarning_Click);
+            this.buttonWarning.Click += new System.EventHandler(this.ButtonSort_Click);
             // 
             // textBoxPathFile
             // 

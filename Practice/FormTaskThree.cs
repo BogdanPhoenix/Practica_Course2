@@ -1,9 +1,6 @@
 ﻿using Bunifu.UI.WinForms;
-using Bunifu.UI.WinForms.BunifuAnimatorNS;
-using Bunifu.UI.WinForms.BunifuButton;
 using System;
 using System.Drawing;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Practice
@@ -180,7 +177,7 @@ namespace Practice
             double buffer;
             for (int i = 0; i < dataResult.RowCount; ++i)
             {
-                if (dataResult.Rows[i].Cells[2].Value.Equals("-"))
+                if (!dataResult.Rows[i].Cells[2].Value.Equals("-"))
                 {
                     buffer = Math.Round(Convert.ToDouble(dataResult.Rows[i].Cells[0].Value.ToString()), dig);
 
@@ -319,7 +316,7 @@ namespace Practice
             double max = Convert.ToDouble(maxX.Text);
             double step = Convert.ToDouble(stepX.Text);
             int dig = stepX.Text.Length - stepX.Text.IndexOf(',') - 1;
-            double pi = min == 0 ? 0.25 : Math.Round(min / Math.PI, 0);
+            double pi = min == 0 ? 0.25 : Math.Ceiling(min / Math.PI);
             for (double i = min; i <= max; i += step)
             {
                 i = Math.Round(i, dig);
@@ -339,7 +336,7 @@ namespace Practice
                 }
             }
             CreateGraph(buttonFunction1, new EventArgs());
-            if(panelRight.Width == 1)
+            if (panelRight.Width == 1)
             {
                 panelRight.Width = closeWidthPanelRight;
             }
@@ -360,7 +357,7 @@ namespace Practice
         /// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
         private void CreateGraph(object sender, EventArgs e)
         {
-            if(currentFunction != null)
+            if (currentFunction != null)
             {
                 currentFunction.BackColor = Color.Transparent;
                 bunifuToolTip.SetToolTip(currentFunction, "Натисніть, щоб побудувати графік функції");

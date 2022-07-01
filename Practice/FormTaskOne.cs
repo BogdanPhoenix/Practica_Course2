@@ -152,13 +152,13 @@ namespace Practice
             if (panelRight.Width == openWidthPanelRight)
             {
                 panelRight.Width = closeWidthPanelRight;
-                buttonActiveGraph.Image = Properties.Resources.back_arrow_64px;
+                buttonActiveGraph.Image = Properties.Resources.open_arrow_64px;
                 bunifuToolTip.SetToolTip(buttonActiveGraph, "Відкрити поле з графіком");
             }
             else
             {
                 panelRight.Width = openWidthPanelRight;
-                buttonActiveGraph.Image = Properties.Resources.open_arrow_64px;
+                buttonActiveGraph.Image = Properties.Resources.back_arrow_64px;
                 bunifuToolTip.SetToolTip(buttonActiveGraph, "Закрити поле з графіком");
             }
         }
@@ -210,7 +210,7 @@ namespace Practice
             switch (pages.PageName)
             {
                 case "tabPage1":
-                    resultInfo.Text = $@"Рівняння: <sup>n</sub>&#8721<sub>i=0</sub> cos(x * i) / i!
+                    resultInfo.Text = $@"Рівняння: <sup>n</sup>&#8721<sub>i=0</sub> cos(x * i) / i!
                                       Функція: y = e<sup>cos x</sup>cos(sin x)
                                       Дані: x = {textBoxArgument_1.Text}; n = {textBoxMax.Text}
                                       Результат: рівняння = {Sum(Convert.ToInt32(textBoxMax.Text), Convert.ToDouble(textBoxArgument_1.Text))};

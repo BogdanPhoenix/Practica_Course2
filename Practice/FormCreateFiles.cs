@@ -129,6 +129,7 @@ namespace Practice
                             }
                             break;
                         case ".xlsx": ExcelDocument.ExportExcelTableFile(textBoxPathFile.Text, dataTable, dropdownTypeSave.Text.Equals("таблиця")); break;
+                        default: MessageBox.Show("Даний тип файлу відсутній у списку. Виберіть доступний файл.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
                     }
                     MessageBox.Show("Файл було успішно створенно.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

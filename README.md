@@ -386,6 +386,348 @@ private void GraphThree(int dig)
 
 Дано файл _F_, компоненти _u<sub>0</sub>,u<sub>1</sub>,...,u<sub>n</sub>_ якого є послідовними числами Фібоначчі. Одержати у файлі _F_ послідовні числа Фібоначчі _u<sub>0</sub>,u<sub>1</sub>,...,u<sub>n + 1</sub>_
 
+### Опис
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_Default.png "Вигляд поля при виборі даної форми, або її оновленні")
+
+При виборі четвертого пункту перед користувачем з'являється форма з наступних елементів:
+
+- поле для введення та відображеня файлу, з якого будуть імпортуватися далі. Дане поле може приймати файли з розширенням `.txt, .docx, та .xlsx`.
+- спосіб заповнення даних таблиці, щоб обчислення здійснювалися від нуля до того числа, яке є меншим або рівним числу введеним у відповідне поле, другий варіант передбачає вивести ряд Фібоначчі до вказаного номера.
+- поле в яке вводяться число, присутній захист від всіх символів, окрім цифр.
+- кнопка обчислення для побудови ряду Фібоначчі.
+- текстове поле, яке інформує, що обчислення іще не були проведені.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_CreateMaxValue.png "Заповнення таблиці числами Фібоначчі за максимальним значенням")
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_CreateMaxNumber.png "Заповнення таблиці числами Фібоначчі до вказаного номера")
+
+Приклад побудови ряду Фібоначчі за максимальнм значенням або за номером. Даний ряд будується зліва направо та зверху вниз. Також при змінні розміру вікна відбувається або зжимання або розтягування таблиці даних, яка адаптується до розмірів вікна.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_ImportFile.png "Запозичення даних з файлу")
+
+Щоб імпортувати дані з файлу потрібно ввести у відповідне текстове меню шлях до файлу і натиснути кнопку справа (_синя стрілка донизу_) що дозволить отримати дані з файлу або не вводити шлях до файлу, а відразу натиснути на кнопку завантаження, тоді на екрані з'явиться відповідне поле для завантаження файлу.
+
+Після занесення даних у ряд Фібоначчі відбувається перевірка за трьома пунктами:
+
+- присутність чисел, які не входять у ряд Фібоначчі (_червоний колір_);
+- присутність елементів, які повторюються (_жовтий колір_);
+- перевірка чи всі елементі розташовані в правильному порядку.
+
+Після отримання даних (_метод `ImageButtonDownload_Click` наведений нижче_) максимальний елемент, який знаходився у файлі заноситься у відповідне поле.
+
+Якщо у файлі були якісь сторонні символи або невдалося зчитати число, то даний елемент пропускається і програма продовжує роботу.
+
+Якщо було знайдено відповідну помилку то на екрані з'явиться кнопка на таблицею (_справа_), яка буде відповідати за те, щоб виправити ряд Фібоначчі та присутні в ньому помилки.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_RemoveExcess.png "Видалення числе, які не входять в ряд Фібоначчі")
+
+Вище наведено приклад Фібоначчі після того, як користувач натиснув на відповідну кнопку (_білий хрестик в червоному колі_), після чого з ряду було видалено всі елементи, які не входять у ряд Фібоначчі.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_DeleteDuplicate.png "Видалення дублікатів з таблиці")
+
+Вище наведено приклад ряду Фібоначчі після того, як користувач натиснув на відповідну кнопку (_жовтий знак оклику в шестерні_), після чого з ряду було видалено всі елементи, які повторювалися. В ряді Фібоначчі може бути присутньо дві одиницю, тому на фото перші дві одиниці не позначено, а позначена лише третя.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_Sort.png "Сортування таблиці")
+
+Вище наведенно приклад вже відсортованого ряду Фібоначчі, де всі елементи стоять на своєму місці. Сортування відбувається тих даних, які було імпортовано із файлу, а не записаного нового ряду Фібоначчі.
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_Export.png "Збереження даних у файл")
+
+Вище наведено вікно для збереження даних у файл. Для того, щоб відкрити вікно для збереження потрібно натиснути відповідну кнопку (_зелена стрілка вгору_). В даному вікні можна зберегти дані в наступні формати файлів:
+
+- `.txt` можливо лише у форматі списку, також можливо додати нумерацію елементів;
+- `.docx`
+  - список, можлива нумерація;
+  - таблиця, нумерація відсутня;
+- `.xlsx` нумераці відсутня
+  - список
+  - таблиця
+
+Після вибору типу файлу можна буде вручну ввести або вибрати за допомогою відповідного поля файл для збереження. Після вибору файлу можна натиснути кнопку "Зберегти"
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_Search.png "Поле для пошуку елемента в ряді фібоначчі")
+
+![](https://github.com/BogdanPhoenix/Practica_Course2/raw/master/Images/Task4_SearchResult.png "Отримання значення з ряду Фібоначчі за вказаним номером")
+
+Вище наведенно поле, яке допомагає знайти елемент за вказаним номером елемента, який ввів користувач. Якщо користувач ввів номер, який відповідає за пусту клітинку, то виведеться відповідне повідомлення. Також в даній формі стоїть обмеження про можливість ввести максимальний номер елемента, щоб він не був більший за кількість комірок таблиці.
+
+### **Метод для створення та заповнення таблиці імпортованими або згенерованими даними**
+
+Даний метод розташований у файлі [FormTaskFour.cs](/Practice/FormTaskFour.cs), та дозволяє відображати дані ряду Фібоначчі в таблиці при побудові ряду з нуля, при змінні розміру програми, при імпортуванні даних, при виправленні помилок.
+
+**Етапи виконання даного методу**
+
+1. Сперш за все при виклику даного метода відбувається перевірка поля, в яке вводяться дані про максимальне значення ряду Фібоначчі або номер ряду, все залежить від вибраного варіанту побудови ряду. Якщо поле є пустим, то виводиться відповідне повідомлення.
+2. Якщо поле не є пустим, то відбувається очищення таблиці, якщо вона до цього була заповнена та виконується її відображення.
+3. Відбувається обчислення максимальної кількості стовпчиків для таблиці при даних розмірах програми.
+4. Створення стовпчиків, присвоюючи їм відповідне ім'я, відсутність можливості редагувати дані та відсутність можливості змінювати розмір колонок.
+5. Обчислення кількості рядків таблиці.
+6. Заповнення комірок таблиці даними з масиву Фібоначчі за допомогою метода [GetFibonachi](/Practice/FormTaskFour.cs), який просто розбиває один масив на декілька менших.
+7. Виконується перевірка чи всі дані були вміщенні в таблицію, якщо ні, то створюється іще один рядок і заповнюється рештою даних.
+8. Виконання перевірок самого ряду за допомогою методів `CheckEqualsError, CheckEqualsWarning та CheckEqualsDuplication` (_опис наведено нижче_).
+9. Виведення графічного відображення тих елементів, які не входять у ряд Фібоначчі або повторюються в ньому.
+10. Перевірка чи всі помилки виправлені, якщо так, то кнопка пошуку стає активною.
+
+```c#
+/// <param name="dictionary">Колекцію з координатами та значеннями ряду</param>
+private void DataResultPrint(Dictionary<int, decimal> dictionary)
+{
+    if (textBoxMaxNumber.Text.Length != 0)
+    {
+        dataResults.Columns.Clear();
+        labelErrorData.Height = 0;
+        imageButtonSearch.Visible = imageButtonCreate.Visible = dataResults.Visible = true;
+
+        int max = dataResults.Width / widthColumn;
+        for (int i = 0; i < max; i++)
+        {
+            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn
+            {
+                HeaderText = $"Column{i}",
+                Name = $"Column{i}",
+                ReadOnly = true,
+                Resizable = DataGridViewTriState.False
+            };
+            dataResults.Columns.Add(column);
+        }
+
+        int rows = dictionary.Count / dataResults.ColumnCount;
+        for (int i = 0; i < rows; i++)
+        {
+            dataResults.Rows.Add(GetFibonachi(dictionary, dataResults.ColumnCount, dataResults.ColumnCount * i, dataResults.ColumnCount * i + dataResults.ColumnCount));
+
+        }
+        if (rows * dataResults.ColumnCount < dictionary.Count)
+        {
+            dataResults.Rows.Add(GetFibonachi(dictionary, dictionary.Count - rows * dataResults.ColumnCount, dataResults.ColumnCount * rows, dictionary.Count));
+        }
+        CheckEqualsError();
+        CheckEqualsWarning();
+        CheckEqualsDuplication();
+        if (duplicatError.Count > 0)
+        {
+            UpdateData(duplicatError, Color.Orange);
+        }
+        if (extraError.Count > 0)
+        {
+            UpdateData(extraError, Color.Red);
+        }
+        formSerch.IsSearch = !buttonError.Visible && !buttonWarning.Visible && !buttonDuplication.Visible;
+    }
+    else
+    {
+        labelErrorData.Height = 200;
+        imageButtonSearch.Visible = imageButtonCreate.Visible = dataResults.Visible = false;
+    }
+}
+```
+
+### **Метод для пошуку значень, які не входять в ряд Фібоначчі**
+
+Даний метод розташований у файлі [FormTaskFour.cs](/Practice/FormTaskFour.cs), та дозволяє отримати словник даних, де `Key` виступає індекс в ряду Фібоначчі, а з `Value` відповідне значення за індексом. Даний спосіб запам'ятовування необхідний для пошуку тих елементів, які не входять в ряд Фібоначчі, тому що пошук здійснюється за `Value`, а індекс потрібний для того, якщо користувач захоче виконати виправлення інших помилок, тому індекси можуть змінитися, а видалення елементів за індексом.
+
+**Етапи виконання даного методу**
+
+1. Очищення словника, в який зберігаються даних про елемент.
+2. Створення словника з правильним рядом Фібоначчі.
+3. Перевірка елементів, які невходять в ряд Фібоначчі, та занесення їхніх даних у відповідний словник.
+4. Відображення кнопки, яка викликає метод `DeleteErrorOrDuplication`, який необхідний для видалення зайвих елементів.
+5. Виведення повідомлення про те, скільки було виявлено помилок.
+
+```c#
+private void CheckEqualsError()
+{
+    extraError.Clear();
+    Dictionary<int, decimal> trueResult = FibonachiNumbers();
+    foreach (var item in fibonachi)
+    {
+        if (!trueResult.ContainsValue(item.Value))
+        {
+            extraError.Add(item.Key, item.Value);
+        }
+    }
+
+    buttonError.Visible = extraError.Count > 0;
+    buttonError.ToolTipText = $"Виявлено дані, які не входять в ряд Фібоначі. ({extraError.Count})";
+}
+```
+
+### **Метод для перевірки чи в таблиці знаходяться дублікати чи ні**
+
+Даний метод розташований у файлі [FormTaskFour.cs](/Practice/FormTaskFour.cs), та дозволяє отримати словник даних, де `Key` виступає індекс в ряду Фібоначчі, а з `Value` відповідне значення за індексом. Даний спосіб запам'ятовування необхідний для пошуку тих елементів, які повторюються декілька разів.
+
+**Етапи виконання даного методу**
+
+1. Очищення словника, в який зберігається дані про елементи.
+2. Отримання даних з основного словника, але в новому словнику відсутні будь-які дублікати.
+3. Здійснення ітерації по основному словнику та перевірка чи присутній в ньому даний індекс. Якщо ні, то виконується наступна умова.
+4. Перевірка на те, чи дане значення для даного ключа дорівнює `одиниці` і чи її менше ніж `2`. Якщо значення хибне, виконується продовження циклу, інакше інденк та значення елементу додаються в словник.
+5. Відображення кнопки, яка викликає метод `DeleteErrorOrDuplication`, який необхідний для видалення зайвих елементів.
+6. Виведення повідомлення про те, скільки було виявлено помилок.
+
+```c#
+private void CheckEqualsDuplication()
+{
+    duplicatError.Clear();
+    int indexOne = 0;
+    var result = fibonachi.GroupBy(kvp => kvp.Value).ToDictionary(grp => grp.First().Key, grp => grp.Key);
+    foreach (var item in fibonachi)
+    {
+        if (!result.ContainsKey(item.Key))
+        {
+            if (item.Value == 1 && indexOne++ < 1)
+            {
+                continue;
+            }
+            duplicatError.Add(item.Key, item.Value);
+        }
+    }
+    buttonDuplication.Visible = duplicatError.Count > 0;
+    buttonDuplication.ToolTipText = $"Виявлено дані, які повторюються. ({duplicatError.Count})";
+}
+```
+
+### **Метод для перевірки чи значення в таблиці стоять в правильному порядку чи ні**
+
+Метод, який потрібний, щоб визначити чи всі елементи розташовані в правильному порядку чи ні. Виконується сортування в буферний словний та виконується перевірка за допомогою метода `EqualsDictionary`, який просто виконує порівняння кожного із елементів двох словників. Якщо словник не рівні, то кнопка для сортування ствє активною.
+
+```c#
+private void CheckEqualsWarning()
+{
+    int index = 0;
+    var sortedDict = from entry in fibonachi orderby entry.Value ascending select entry;
+    Dictionary<int, decimal> buffer = sortedDict.ToDictionary(entry => index++, entry => entry.Value);
+    buttonWarning.Visible = !EqualsDictionary(fibonachi, buffer);
+}
+```
+
+### **Метод для сортування даних в таблиці**
+
+**Етапи виконання даного методу**
+
+1. Створення впорядкованої послідовності в якій всі дані є відсортованими.
+2. Переписування основного словника таким чином, щоб в нього всі елементи знаходилися в порядку зростянна та присвоювання їм нових індексів.
+3. Зміна індексів тим елементам, які повторюються або потрібно видалити.
+4. Виведення отриманого результату.
+5. Приховування відповідної кнопки.
+
+```c#
+/// <param name="sender">Об'єкт кнопки</param>
+/// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
+private void ButtonSort_Click(object sender, EventArgs e)
+{
+    int index = 0;
+    var sortedDict = from entry in fibonachi orderby entry.Value ascending select entry;
+    fibonachi = sortedDict.ToDictionary(entry => index++, entry => entry.Value);
+    extraError = extraError.ToDictionary(entry => entry.Key, entry => fibonachi.FirstOrDefault(x => x.Value == entry.Key).Value);
+    duplicatError = duplicatError.ToDictionary(entry => entry.Key, entry => fibonachi.FirstOrDefault(x => x.Value == entry.Key).Value);
+    DataResultPrint(fibonachi);
+    buttonWarning.Visible = false;
+}
+```
+
+### **Метод для видаленння елементів в таблиці, які викликають помилки**
+
+**Етапи виконання даного методу**
+
+1. Видалення тих елементів, які порушують ряд Фібоначчі за індексами.
+2. Перезаписування елементам, ті що залишилися, нових індексів.
+3. Виведення отриманого результату.
+4. Приховування відповідної кнопки.
+
+```c#
+/// <param name="sender">Об'єкт кнопки</param>
+/// <param name="dictionary">Колекція даних для видалення</param>
+private void DeleteErrorOrDuplication(object sender, Dictionary<int, decimal> dictionary)
+{
+    int index = 0;
+    foreach (var item in dictionary)
+    {
+        fibonachi.Remove(item.Key);
+    }
+    fibonachi = fibonachi.ToDictionary(entry => index++, entry => entry.Value);
+    dictionary = dictionary.ToDictionary(entry => entry.Key, entry => fibonachi.FirstOrDefault(x => x.Value == entry.Key).Value);
+    DataResultPrint(fibonachi);
+    ((BunifuImageButton)sender).Visible = false;
+}
+```
+
+### **Метод для імпорту даних з файлу**
+
+**Етапи виконання даного методу**
+
+1. Перевірка чи було введено шлях до файлу.
+2. Оновлення форми для пошуку. Скидання всіх полів.
+3. Перевірка чи таблиця даних не пуста. Якщо значення істинна, то відбувається очищення даних.
+4. Відповідно до розширення файлу відбувається імпорт даних. Імпорт даних наведений у файлах: [TXTDocument.cs](/Practice/InteractionFile/TXTDocument.cs), [WordDocument.cs](/Practice/InteractionFile/WordDocument.cs), [ExcelDocument.cs](/Practice/InteractionFile/ExcelDocument.cs). Якщо розширення файлу відсутнє в умовному операторі то виводиться відповідне повідомлення та метод припиняє роботу.
+5. Якщо розширення файлу знаходиться в умовному операторі, то після отримання даних для цього файлу здійснюється ряду Фібоначчі та таблиці з результатом.
+6. Здійснюється пошук максимального елемента у файлі, та результат присвоюється у відповідне поле.
+7. Варіант побудови становиться "за максимальним значенням".
+8. Виведення результату на екран.
+
+```c#
+/// <param name="sender">Об'єкт кнопки</param>
+/// <param name="e">Базовый клас для класів, який містить дані властивостей та надає їх</param>
+private void ImageButtonDownload_Click(object sender, EventArgs e)
+{
+    try
+    {
+        if (textBoxPathFile.Text.Length == 0)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBoxPathFile.Text = openFileDialog.FileName;
+            }
+            else
+            {
+                MessageBox.Show("Ви не обрали файл з даними. Введіть шлях до файлу вручну або виберіть його через спеціальну форму, щоб продовжити імпорт.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+        formSerch.UpdateForm();
+        int index = 0, indexNumber;
+        string number;
+        if (dataTable != null)
+        {
+            dataTable.Clear();
+        }
+        switch (Path.GetExtension(textBoxPathFile.Text))
+        {
+            case ".txt": dataTable = TXTDocument.ImportTXTFile(textBoxPathFile.Text); break;
+            case ".docx": dataTable = WordDocument.ImportWordFile(textBoxPathFile.Text); break;
+            case ".xlsx": dataTable = ExcelDocument.ImportExcelFile(textBoxPathFile.Text); break;
+            default: MessageBox.Show("Вибраний вами файл має розширення, з яким не працює програма.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+        }
+        fibonachi.Clear();
+        foreach (DataRow row in dataTable.Rows)
+        {
+            for (int i = 0; i < row.ItemArray.Length; ++i)
+            {
+                number = row[i].ToString();
+                indexNumber = number.LastIndexOf(": ");
+                number = indexNumber > 0 ? number.Substring(indexNumber + 2) : number;
+                if (decimal.TryParse(number, out decimal buffer))
+                {
+                    fibonachi.Add(index++, Convert.ToDecimal(number));
+                }
+            }
+        }
+        textBoxMaxNumber.Text = fibonachi.Values.Max().ToString();
+        radioButtonMaxValue.Checked = true;
+        DataResultPrint(fibonachi);
+    }
+    catch (IOException ex)
+    {
+        MessageBox.Show($"Під час отримання даних із файлу сталася помилка. \nТекст помилки: {ex.Message}", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Під час отримання даних сталася помилка. \nТекст помилки: {ex.Message}", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+```
+
 ---
 
 ## Задача №5

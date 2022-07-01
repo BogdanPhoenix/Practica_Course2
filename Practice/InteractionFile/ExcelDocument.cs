@@ -133,6 +133,12 @@ namespace Practice
         }
         #endregion
         #region Експорт даних
+        /// <summary>
+        /// Метод для створення Excel файлів та заповнення їх даними
+        /// </summary>
+        /// <param name="nameOpenFile">Шлях до файлу</param>
+        /// <param name="data">Дані для занесення у файл</param>
+        /// <param name="isTable">Ідентифікатор для створення таблиці чи вертикального списку</param>
         public static void ExportExcelTableFile(string nameOpenFile, DataTable data, bool isTable)
         {
             try

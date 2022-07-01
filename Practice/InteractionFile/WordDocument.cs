@@ -19,6 +19,10 @@ namespace Practice
         private const int sizeTableProperties = 12;
 
         #region Імпорт даних
+        /// <summary>
+        /// Метод для зчитування даних з файлів Word
+        /// </summary>
+        /// <returns>Повертає таблицю даних, файлів Word</returns>
         public static DataTable ImportWordFile(string nameOpenFile)
         {
             try
@@ -91,6 +95,12 @@ namespace Practice
         }
         #endregion
         #region Експорт даних
+        /// <summary>
+        /// Метод для створення списку у Word файлі та заповнення його даними
+        /// </summary>
+        /// <param name="nameOpenFile">Шлях до файлу</param>
+        /// <param name="data">Дані для занесення у файл</param>
+        /// <param name="addNumbering">Ідентифікатор для додання нумерації даних</param>
         public static void ExportWordListFile(string nameOpenFile, DataTable data, bool addNumbering)
         {
             try
@@ -137,6 +147,11 @@ namespace Practice
                 MessageBox.Show($"Відбувся збій під час опрацювання даних.\nТекст помилки: {ex.Message}.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        /// <summary>
+        /// Метод для створення таблиці у Word файлі та заповнення його даними
+        /// </summary>
+        /// <param name="nameOpenFile">Шлях до файлу</param>
+        /// <param name="data">Дані для занесення у файл</param>
         public static void ExportWordTableFile(string nameOpenFile, DataTable data)
         {
             try
